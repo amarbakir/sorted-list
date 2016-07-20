@@ -1,0 +1,17 @@
+Amar Bakir
+CS 214
+PA2: Testplan
+
+This testplan of the sorted-list implementation will be used six times: Twice for each data type (string, double, int).Once using dynamically allocated objects (ex: mainintalloc) and another time without dynamic allocation it (ex: mainint).
+For each test this is what will be done:
+
+First a sorted list is created. Five unique elements should be inserted. AFter that I attempt to insert a duplicate.
+An iterator is created and it is used as a pointer in a loop that prints out the elements in the list (strings are enclosed in quotes). In this first run through the duplicate elements should not be seen, as duplicates are not allowed. The iterator is destroyed.
+A new iterator is created and it is moved to an element. Then that element is removed from the list, followed by the element after it. A second iterator is created and made to run through the list. The two elements that were deleted should not be seen.
+The second iterator is destroyed and the first one is checked for its current and next element. The current and next element should be the removed element and then the one after it that was also removed. The iterator is then destroyed. If the memory would be checked here, you would notice the elements that were removed but stayed because of the first iterator are now destroyed.
+After this an element that is smaller than the entire list will be inserted followed by an element larger than the list. This is to show that SLInsert can handle edge cases. An iterator is again created to run through a list, printing the elements to output, and then it is destroyed.
+An element that does not exist in the list is then removed from the list. There is an if statement to check for whether or not this succeeds (it should fail).
+Then an element that already exists is inserted into the list. There is another if statement checking for success (this should also fail).
+An iterator is created to run through the list to prove the previous two tests. The iterator is then destoryed.
+Finally all the remaining elements are removed from the list. The test attempts to create an iterator to show the contents of the list. This shold fail as the list is empty.
+The list is then destoryed.
